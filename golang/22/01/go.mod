@@ -1,3 +1,3 @@
-module 01
+module calorie_counting
 
 go 1.21.0
