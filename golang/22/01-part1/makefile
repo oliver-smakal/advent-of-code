@@ -1,4 +1,8 @@
 BINARY_NAME=main.out
+
+ifndef VERBOSE
+.SILENT:
+endif
  
 all: build test
  
@@ -7,7 +11,7 @@ build:
  
 test:
 	go test -v ./...
-	cat ./tests/01 | ./${BINARY_NAME}| diff -y tests/01res -;echo
+	./test.sh | ./${BINARY_NAME}
  
 run:
 	go build -o ${BINARY_NAME}
